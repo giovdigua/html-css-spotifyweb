@@ -24,8 +24,11 @@ footer{
     bottom: 0;
     background-color: #282828;
     z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
+/* main section */
 #mainContainer{
     width: 100%;
     margin: 5px 5px 5px 15px;
@@ -100,8 +103,49 @@ p.author{
     text-align: center;
     padding: 5px;
 }
+/* end main section */
+/* footer */
+#currentSong{
+
+    margin: 5px;
+    flex-basis: 15%;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+
+}
+
+#currentSong img {
+    height: 40px;
+    width: 40px;
+}
+
+.songDetail{
+    display: none;
+}
 
 
+#playerContainer{
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    margin: 5px;
+    flex-basis: 75%;
+}
+
+#volumeContainer{
+    display: none;
+
+}
+/* end footer */
+/* end main section */
+
+@media screen and (min-width: 576px) {
+
+
+
+}
 
 
 @media screen and (min-width: 768px) {
@@ -161,6 +205,76 @@ p.author{
         list-style-type: none;
         margin: 5px;
         white-space: nowrap;
+
+    }
+
+    .songImg{
+        width: 150px;
+        height: 150px;
+    }
+
+    p.author{
+        font-size: 15px;
+    }
+
+    .songDetail{
+        display: inline-block;
+        line-height: 2;
+        white-space: nowrap;
+    }
+    .songDetail h3{
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .songDetail h4{
+        font-size: 8px;
+        font-weight: lighter;
+    }
+    #currentSong{
+
+        flex-basis: 28%;
+    }
+
+    #currentSong img {
+        height: 50px;
+        width: 50px;
+    }
+
+
+
+    #playerContainer{
+
+        flex-basis: 50%;
+    }
+
+    #volumeContainer{
+        display: block;
+        width: 100px;
+        height: 50px;
+        background-color: red;
+        margin: 5px;
+        flex-basis: 10%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    #currentSong{
+
+        flex-basis: 18%;
+    }
+
+    #currentSong img {
+        height: 55px;
+        width: 55px;
+    }
+
+    .songDetail h3{
+        font-size: 12px;
+
+    }
+    .songDetail h4{
+        font-size: 10px;
 
     }
 }
