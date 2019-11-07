@@ -7,12 +7,7 @@
 }
 
 main{
-
-    display: flex;
-    align-items: stretch;
-    /* height: 1000px; */
-    margin-bottom: 100px;
-
+    position: relative;
 }
 
 
@@ -28,26 +23,40 @@ footer{
     justify-content: space-between;
     align-items: center;
 }
+
+#leftSideContainer{
+
+    width: 20%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 100px;
+    background: rgb(30,27,2);
+    background: linear-gradient(0deg, rgba(30,27,2,1) 0%, rgba(16,14,1,1) 100%);
+    padding:0px 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+
 /* main section */
+#rightSideContainer{
+    position: absolute;
+    width: 80%;
+    margin-bottom: 100px;
+    left: 20%;
+    background: rgb(139,129,37);
+    background: linear-gradient(150deg, rgba(139,129,37,1) 0%, rgba(16,14,1,1) 100%);
+
+}
+
 #mainContainer{
     width: 100%;
     margin: 5px 5px 5px 15px;
 }
-
-#leftSideContainer{
-    width: 15%;
-    background: rgb(30,27,2);
-    background: linear-gradient(0deg, rgba(30,27,2,1) 0%, rgba(16,14,1,1) 100%);
-}
-
-#rightSideContainer{
-    width: 85%;
-    background: rgb(139,129,37);
-    background: linear-gradient(150deg, rgba(139,129,37,1) 0%, rgba(16,14,1,1) 100%);
-    overflow: auto;
-}
-
-
 
 #headerMain nav{
     display: none;
@@ -216,7 +225,25 @@ p.author{
     padding: 5px;
 }
 /* end footer */
-/* end main section */
+
+
+/* left side section */
+#logo{
+    color: white;
+
+    font-size: 1.4rem;
+
+
+}
+
+#logoText{
+    display: none;
+}
+.hiddenMobile{
+    display: none;
+}
+
+/* end left side section */
 
 @media screen and (min-width: 576px) {
 
@@ -226,6 +253,17 @@ p.author{
 
 
 @media screen and (min-width: 768px) {
+
+    #leftSideContainer{
+        width: 15%;
+        align-items: flex-start;
+    }
+
+    /* main section */
+    #rightSideContainer{
+        width: 85%;
+        left: 15%;
+    }
 
     #mainContainer{
         max-width: 75%;
@@ -322,15 +360,9 @@ p.author{
         width: 50px;
     }
 
-
-
-
-
     .commandLine {
         width: 50%;
     }
-
-
 
     #volumeContainer{
         display: flex;
@@ -355,7 +387,14 @@ p.author{
         top:20%;
     }
 
+    #logoText{
+        display: inline-block;
+        vertical-align: super;
+    }
 
+    .hiddenMobile{
+        display: inline-block;
+    }
 }
 
 @media screen and (min-width: 992px) {
