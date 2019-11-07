@@ -119,6 +119,7 @@ p.author{
 #currentSong img {
     height: 40px;
     width: 40px;
+    padding: 3px;
 }
 
 .songDetail{
@@ -127,16 +128,89 @@ p.author{
 
 
 #playerContainer{
-    width: 100px;
-    height: 50px;
-    background-color: red;
     margin: 5px;
     flex-basis: 75%;
+    display: flex;
+    flex-flow: column;
+    align-content: space-around;
+}
+
+.commandLine,#durationSongLine {
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto;
+}
+.commandLine{
+    width: 80%;
+
+}
+
+#playerContainer .commandLine i{
+    font-size: 1.3rem;
+}
+#volumeContainer .commandLine i{
+    font-size: 0.8rem;
+}
+
+#durationSongLine{
+    width: 100%;
+    margin: auto;
+    font-size: 0.7rem;
+
+}
+.time{
+    padding: 15px;
+}
+.bullet{
+    visibility: hidden;
+}
+.bulletSlider:hover .bullet{
+    visibility: visible;
+    top:36%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+}
+.bulletSlider{
+    position: relative;
+    width: 100%;
+}
+.bulletSlider::before,
+.bulletSlider::after {
+    content: '';
+    display: inline-block;
+    width: 50%;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bulletSlider::before {
+    background-color: rgba(255, 255, 255, 1);
+    left: 0;
+}
+.bulletSlider:hover::before {
+    background-color: rgba(42, 182, 88, 1);
+
+}
+
+.bulletSlider::after {
+    right: 0;
 }
 
 #volumeContainer{
     display: none;
 
+}
+
+.loveSong{
+    padding: 5px;
 }
 /* end footer */
 /* end main section */
@@ -230,9 +304,14 @@ p.author{
         font-size: 8px;
         font-weight: lighter;
     }
+
+    #playerContainer{
+
+        flex-basis: 50%;
+    }
     #currentSong{
 
-        flex-basis: 28%;
+        flex-basis: 25%;
     }
 
     #currentSong img {
@@ -242,18 +321,33 @@ p.author{
 
 
 
-    #playerContainer{
 
-        flex-basis: 50%;
+
+    .commandLine {
+        width: 50%;
     }
 
+
+
     #volumeContainer{
-        display: block;
-        width: 100px;
-        height: 50px;
-        background-color: red;
-        margin: 5px;
-        flex-basis: 10%;
+        display: flex;
+        flex-basis: 25%;
+
+    }
+    #volumeContainer .commandLine{
+        width: 80%;
+        padding: 5px;
+
+    }
+    #volumeContainer .commandLine .bulletSlider{
+        width: 60%;
+        margin: 0;
+        padding: 0;
+    }
+    #volumeContainer .commandLine .bulletSlider:hover .bullet{
+        top:10%;
+
+        padding: 0;
     }
 }
 
@@ -277,4 +371,14 @@ p.author{
         font-size: 10px;
 
     }
+
+    .commandLine {
+        width: 40%;
+    }
+
+    #volumeContainer{
+
+        flex-basis: 18%;
+    }
+
 }
