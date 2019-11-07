@@ -164,6 +164,9 @@ p.author{
 }
 .bullet{
     visibility: hidden;
+    top:36%;
+    width: 15px;
+    height: 15px;
 }
 .bulletSlider:hover .bullet{
     visibility: visible;
@@ -341,14 +344,18 @@ p.author{
     }
     #volumeContainer .commandLine .bulletSlider{
         width: 60%;
-        margin: 0;
-        padding: 0;
-    }
-    #volumeContainer .commandLine .bulletSlider:hover .bullet{
-        /* top:10%; */
 
-        padding: 0;
     }
+    #volumeContainer .commandLine i{
+        margin-top: 3px;
+        padding:5px;
+    }
+
+    #volumeContainer .commandLine .bulletSlider:hover .bullet{
+        top:20%;
+    }
+
+
 }
 
 @media screen and (min-width: 992px) {
